@@ -27,7 +27,7 @@ while(!System_Daemon::isDying()) {
     $bks = ORM::for_table('bank_account')->where('account_status', 0)->find_many();
     $size = ORM::for_table('bank_account')->where('account_status', 0)->count();
     if ($size > 0) {
-        error_log("you have " . $bks->count() . "inactive accounts.".PHP_EOL, 3, $infoLogfile);
+        error_log("you have " . $size . " inactive accounts.".PHP_EOL, 3, $infoLogfile);
     } else {
         error_log("There is nothing to report.".PHP_EOL, 3, $infoLogfile);
     }
