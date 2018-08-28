@@ -7,16 +7,16 @@ $db_log = true;
 
 
 # Application settings
-$appname = "peacedaemon";
+$appname = "peaced";
 $author = "Alliance Peace";
 $email = "roiry25@gmail.com";
 $description = "try app";
-$dir = __DIR__;
+$dir = __DIR__ . '/..';
 $executable = "index.php";
 
 #Log files
-$infoLogfile = __DIR__ . "/logs/info.log";
-$errorLogfile = __DIR__ . "/logs/error.log";
+$infoLogfile = "/var/log/peaced/info.log";
+$errorLogfile = "/var/log/peaced/error.log";
 
 ## DO NOT EDIT BELOW THIS LINE ##
 
