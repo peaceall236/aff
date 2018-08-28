@@ -1,8 +1,8 @@
 <?php
 
 require_once(__DIR__ . '/vendor/autoload.php');
-require_once('System/daemon.php');
-require_once('app/config.php');
+require_once('System/Daemon.php');
+require_once('App/Config.php');
 
 System_Daemon::setOptions($options);
 System_Daemon::start(); 
@@ -14,8 +14,8 @@ ORM::configure('password', $db_pass);
 while(!System_Daemon::isDying()) {
     
 
-    $bks = ORM::for_table('bank_account')->where('status', 0)->find_many();
-    if ($bks->count() > 0) {
+    $bks = ORM::for_table('bank_account')->where('account_status', 0)->find_many();
+    if (ORM::for_table('bank_account')->where('account_status', 0)->count() > 0) {
         
         error_log("you have " . $bks->count() . "inactive accounts.", 3, $infoLogfile);
     } else {

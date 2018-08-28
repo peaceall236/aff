@@ -2,7 +2,7 @@
 
 $db_link = "mysql:host=localhost;dbname=test";
 $db_user = "root";
-$db_pass = "";
+$db_pass = "toor";
 $db_log = true;
 
 
